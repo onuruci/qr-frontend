@@ -5,7 +5,7 @@ const Header = () => {
         <div className="header">
             <div className="left-side">
                 <div className="project-name">
-                    <div className="qr-code-text">qrcode</div> <div className="lemon-text">Lemon</div>
+                    <h1 className="qr-code-text">qrcode</h1> <h1 className="lemon-text">Lemon</h1>
                 </div>
 
                 <div className="information-text">

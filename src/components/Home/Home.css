@@ -1,0 +1,25 @@
+body{
+    background-color: #20c997;
+    padding: 3% 20% 3% 20%;
+    color: white;
+    font-family: "Open Sans",Sans-Serif;
+    font-size: 16px;
+}
+
+.header{
+    display: flex;
+}
+
+
+.header .left-side{
+    font-size: 32px;
+    display: flex;
+    flex-direction: row;
+}
+.header .left-side .qr-code-text{
+    font-weight: bolder;
+}
+
+.header .right-side{
+    
+}

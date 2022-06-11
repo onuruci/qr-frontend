@@ -14,18 +14,18 @@ const Header = () => {
             </div>
             <div className="right-side">
 
-                <div className="element">
-                    About
-                </div>
-                <div className="element">
-                    About
-                </div>
-                <div className="element">
-                    About
-                </div>
-                <div className="element">
-                    About
-                </div>
+                <button className="element">
+                    ABOUT
+                </button>
+                <button className="element">
+                    CHROME APP
+                </button>
+                <button className="element">
+                    QRCODE API
+                </button>
+                <button className="element">
+                    ENGLISH
+                </button>
 
             </div>
         </div>

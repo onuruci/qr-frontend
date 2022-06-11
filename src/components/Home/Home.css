@@ -50,4 +50,15 @@ body{
     justify-content: space-between;
     gap: 2rem;
     
+
+}
+.header .right-side button{
+    background-color: inherit;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.header .right-side button:hover{
+    color: rgb(209, 203, 203);
 }

@@ -31,6 +31,12 @@ const MainGenerator = () => {
             value={urlToDownload}
             bgColor={backgroundColor}
             fgColor={foregroundColor}
+            imageSettings={{
+                src: selectedImage,
+                excavate: true,
+                width: 500 * 0.1,
+                height: 500 * 0.1,
+              }}
             level="Q"
             includeMargin
         />
@@ -44,6 +50,12 @@ const MainGenerator = () => {
             bgColor={backgroundColor}
             fgColor={foregroundColor}
             level="Q"
+            imageSettings={{
+                src: selectedImage,
+                excavate: true,
+                width: 400 * 0.1,
+                height: 400 * 0.1,
+              }}
             includeMargin
         />
     );

@@ -18,6 +18,7 @@ const MainGenerator = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [foregroundColor, setForegroundColor] = useState("#000000");
     const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
+    const [selectedImage, setSelectedImage] = useState();
 
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";
@@ -67,6 +68,11 @@ const MainGenerator = () => {
         }, 1000);
     };
 
+    const handleSelectedInput = (e) => {
+        const [file] = e.target.files;
+        setSelectedImage(URL.createObjectURL(file));
+    }
+
     const renderActiveTab = (val) => {
 
         if (val == activeTab) {
@@ -107,6 +113,19 @@ const MainGenerator = () => {
                                 {backgroundColor}
                             </div>
                         </div>
+                    </div>
+                </div>
+            }
+            else if (val == 2) {
+                return <div className="select-image-container">
+
+                    <div className="selected-image-view">
+                        <img className="selected-image-src" src = {selectedImage ? selectedImage : null}></img>
+                    </div>
+
+                    <div>
+                        <input className="select-image" id="select-image" type="file" name="logo-image" onChange={(e) => handleSelectedInput(e)} accept="image/*" />
+                        <button className="load-image-button" id="loadLogo" onClick={() => document.getElementById('select-image').click()}>LOAD IMAGE</button>
                     </div>
                 </div>
             }

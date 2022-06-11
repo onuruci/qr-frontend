@@ -1,4 +1,4 @@
-#main-generator {
+.main-generator {
     margin: 8rem auto 0 auto;
     max-width: 1200px;
     width: 950%;
@@ -6,12 +6,46 @@
     background-color: rgb(255,255,255);
     border-radius: 0.5rem;
     display: flex;
+    flex-direction: row;
+   
 }
 
+
+
 .qr-editor {
-    background-color: #d6dadd;
+    display: flex;
+    flex-direction: column;
+    background-color: #e8ebec;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem 4rem 2rem 4rem;
+    gap: 1rem;
+}
+.selection-button{
+    color: rgb(46, 43, 43);
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    height: 3.5rem;
+    gap: 1rem;
+    background-color: white;
+    align-items: center;
+    padding: 0;
+   cursor: pointer;
+}
+.select-logo{
+    background-color: rgb(226, 219, 219);
+    height: 3.5rem;
+    width: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo-image{
+    width: 20px;
+    height: 20px;
 }
 
 .qr-container {

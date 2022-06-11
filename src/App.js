@@ -1,10 +1,18 @@
-import './App.css';
+import React from "react";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      QR code elephant
-    </div>
+  <BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<div>QR CODE ELEPHANT</div>} />
+    </Routes>
+  </BrowserRouter>
   );
 }
 

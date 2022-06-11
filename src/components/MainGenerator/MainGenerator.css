@@ -21,7 +21,7 @@
     gap: 1rem;
 }
 .selection-button{
-    color: rgb(46, 43, 43);
+    color: #6f787f;
     border: none;
     background-color: inherit;
     font-size: 16px;
@@ -35,6 +35,24 @@
     padding: 0;
    cursor: pointer;
 }
+.url-content{
+    display: flex;
+    color: #6f787f;
+   font-size: 14px;
+   font-weight: bold;
+   margin-top: 0.5rem;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+.url-input{
+    height: 3rem;
+    font-size: 16px;
+    padding: 0 0.4rem 0 0.4rem;
+    color: #333536;
+    font-weight: 500;
+    border: none;
+    margin-bottom: 0.5rem;
+}
 .select-logo{
     background-color: rgb(226, 219, 219);
     height: 3.5rem;
@@ -42,6 +60,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.select-text{
+   width: 33.5rem;
+   text-align: left;
+}
+.plus-minus{
+    width: 16px;
+    height: 16px;
 }
 .logo-image{
     width: 20px;

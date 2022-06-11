@@ -14,12 +14,14 @@ const MainGenerator = () => {
 
     const qrCode = (
         <QRCode
-            id="qrCodeElToRender"
-            size={330}
-            value={url}
-            bgColor="white"
-            fgColor="#141926"
-            level="Q"
+
+          id="qrCodeElToRender"
+          size={330}
+          value={url}
+          bgColor="white"
+          fgColor="#141926"
+          level="Q"
+          includeMargin
         />
     );
 
@@ -88,12 +90,13 @@ const MainGenerator = () => {
                 </button >
 
                 <input type="text" value={url} onChange={e => setUrl(e.target.value)} />
-                <button onClick={() => downloadQRCode()}>Download QR</button>
+
             </div>
             <div className="qr-container">
                 <div className="qr" ref={qrRef}>
                     {qrCode}
                 </div>
+                <button onClick={() => downloadQRCode() }>Download QR</button>
             </div>
         </div>
     );

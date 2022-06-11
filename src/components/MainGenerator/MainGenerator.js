@@ -155,9 +155,9 @@ const MainGenerator = () => {
                 <div className="qr-to-download" ref={qrRef}>
                     {qrToDownload}
                 </div>
-                <div>
-                    <button className="" onClick={() => generateQRCode() }>Generate Code</button>
-                    <button className="" onClick={() => downloadQRCode() }>Download QR</button>
+                <div className="qr-button-container">
+                    <button className="qr-button bg-green" onClick={() => generateQRCode()}>Generate QR</button>
+                    <button className="qr-button bg-blue" onClick={() => downloadQRCode()}>Download QR</button>
                 </div>
             </div>
         </div>

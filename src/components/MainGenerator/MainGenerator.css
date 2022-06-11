@@ -113,6 +113,40 @@
    width: 33.5rem;
    text-align: left;
 }
+
+
+.select-image{
+    display: none;
+}
+
+.select-image-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.selected-image-view{
+    width: 8rem;
+    height: 8rem;
+    background-color: white;
+}
+.selected-image-src{
+    width: 8rem;
+    height: 8rem;
+}
+
+.load-image-button{
+    border: none;
+    background-color: #03a9f4;
+    width: 8rem;
+    height: 2.5rem;
+    color: white;
+    cursor: pointer;
+}
+.load-image-button:hover{
+    box-shadow: 3px 3px #cccaca;
+}
+
+
 .plus-minus{
     width: 16px;
     height: 16px;

@@ -30,7 +30,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 .header .left-side .project-name{
     display: flex;

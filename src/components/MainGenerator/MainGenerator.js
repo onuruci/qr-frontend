@@ -87,8 +87,8 @@ const MainGenerator = () => {
                     </div>
                 </button >
 
-                {/*<input type="text" value={url} onChange={e => setUrl(e.target.value)} />
-                <button onClick={() => downloadQRCode()}>Download QR</button>*/}
+                <input type="text" value={url} onChange={e => setUrl(e.target.value)} />
+                <button onClick={() => downloadQRCode()}>Download QR</button>
             </div>
             <div className="qr-container">
                 <div className="qr" ref={qrRef}>

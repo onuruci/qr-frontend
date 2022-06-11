@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./components/Home";
 
 import {
   BrowserRouter,
@@ -10,7 +11,7 @@ function App() {
   return (
   <BrowserRouter>
     <Routes>
-      <Route exact path="/" element={<div>QR CODE ELEPHANT</div>} />
+      <Route exact path="/" element={<Home></Home>} />
     </Routes>
   </BrowserRouter>
   );

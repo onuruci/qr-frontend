@@ -13,9 +13,9 @@ const Header = () => {
                         <h1 className="qr-code-text">qrcode</h1> <h1 className="lemon-text">Lemon</h1>
                     </div>
 
-                    <h2 className="information-text">
+                    <h1 className="information-text">
                         The 100% Free QR Code Generator
-                    </h2>
+                    </h1>
                 </div>
             </div>
             <div className="right-side">

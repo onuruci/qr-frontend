@@ -1,0 +1,25 @@
+#main-generator {
+    margin: 8rem auto 0 auto;
+    max-width: 1200px;
+    width: 950%;
+    height: 100%;
+    background-color: rgb(255,255,255);
+    border-radius: 0.5rem;
+    display: flex;
+}
+
+.qr-editor {
+    background-color: #d6dadd;
+    width: 100%;
+    padding: 2rem;
+}
+
+.qr-container {
+    margin-left: auto;
+    height: 600px;
+    padding: 2rem;
+}
+
+.qr {
+    margin:auto;
+}

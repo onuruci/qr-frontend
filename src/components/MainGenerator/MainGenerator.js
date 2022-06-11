@@ -16,6 +16,8 @@ const MainGenerator = () => {
     const [qrColor, setQRColor] = useState("#141926");
     const qrRef = React.useRef();
     const [activeTab, setActiveTab] = useState(0);
+    const [foregroundColor, setForegroundColor] = useState("#000000");
+    const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
 
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";
@@ -23,25 +25,25 @@ const MainGenerator = () => {
     const qrCode = (
         <QRCode
 
-          id="qrCodeElToRender"
-          size={350}
-          value={urlToDownload}
-          bgColor="white"
-          fgColor={qrColor}
-          level="Q"
-          includeMargin
+            id="qrCodeElToRender"
+            size={350}
+            value={urlToDownload}
+            bgColor={backgroundColor}
+            fgColor={foregroundColor}
+            level="Q"
+            includeMargin
         />
     );
 
     const qrToDownload = (
         <QRCode
-          id="qrCodeElToRender"
-          size={1200}
-          value={urlToDownload}
-          bgColor="white"
-          fgColor="#000"
-          level="Q"
-          includeMargin
+            id="qrCodeElToRender"
+            size={1200}
+            value={urlToDownload}
+            bgColor={backgroundColor}
+            fgColor={foregroundColor}
+            level="Q"
+            includeMargin
         />
     );
 
@@ -61,27 +63,50 @@ const MainGenerator = () => {
         setTimeout(() => {
             setQRColor(normalColor);
             setUrlToDownload(url);
-        }, 1000); 
+        }, 1000);
     };
 
     const renderActiveTab = (val) => {
-    
-        if(val == activeTab){
-            
-            if(val == 0){
+
+        if (val == activeTab) {
+
+            if (val == 0) {
 
                 return <div className="url-content">
                     <div>
                         Your Url
                     </div>
                     <input className="url-input" type="text" value={url} onChange={e => setUrl(e.target.value)} />
-                </div>  
+                </div>
 
             }
 
 
-            else if(val == 1){
-
+            else if (val == 1) {
+                return <div className="color-content">
+                    <div className="color-div">
+                        <div>
+                            Foreground Color
+                        </div>
+                        <div className="color-change">
+                            <input className="foreground-color-input" type="color" value={foregroundColor} onChange={e => setForegroundColor(e.target.value)} />
+                            <div className="color-text">
+                                {foregroundColor}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="color-div">
+                        <div>
+                            Background Color
+                        </div>
+                        <div className="color-change">
+                            <input className="background-color-input" type="color" value={backgroundColor} onChange={e => setBackgroundColor(e.target.value)} />
+                            <div className="color-text">
+                                {backgroundColor}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             }
 
         }
@@ -90,59 +115,59 @@ const MainGenerator = () => {
 
     return (
         <div className="main-generator">
-            
+
 
 
             <div className="qr-editor">
-                <button id = "0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button">
+                <button id="0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button">
                     <div className="select-logo">
-                        <img className="logo-image" src={selectLogo} alt = "world-image"/>
+                        <img className="logo-image" src={selectLogo} alt="world-image" />
                     </div>
                     <div className="select-text">
                         ENTER CONTENT
                     </div>
                     <div className="extend-shrink">
-                        {activeTab != 0 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
+                        {activeTab != 0 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
                     </div>
                 </button>
-                
+
                 {renderActiveTab(0)}
 
-                <button id = "1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button">
+                <button id="1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button">
                     <div className="select-logo">
-                        <img className="logo-image" src={colorPalette} alt = "world-image"/>
+                        <img className="logo-image" src={colorPalette} alt="world-image" />
                     </div>
                     <div className="select-text">
                         SET COLORS
                     </div>
                     <div className="extend-shrink">
-                    {activeTab !=1 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
+                        {activeTab != 1 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
                     </div>
                 </button >
 
                 {renderActiveTab(1)}
-                <button id = "2" onClick={ () => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button">
+                <button id="2" onClick={() => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button">
                     <div className="select-logo">
-                        <img className="logo-image" src={addPhoto} alt = "world-image"/>
+                        <img className="logo-image" src={addPhoto} alt="world-image" />
                     </div>
                     <div className="select-text">
                         ADD LOGO IMAGE
                     </div>
                     <div className="extend-shrink">
-                    {activeTab != 2 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
+                        {activeTab != 2 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
                     </div>
                 </button >
 
                 {renderActiveTab(2)}
-                <button id = "3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button">
+                <button id="3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button">
                     <div className="select-logo">
-                        <img className="logo-image" src={customizeLogo} alt = "world-image"/>
+                        <img className="logo-image" src={customizeLogo} alt="world-image" />
                     </div>
                     <div className="select-text">
                         CUSTOMIZE DESIGN
                     </div>
                     <div className="extend-shrink">
-                    {activeTab != 3 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
+                        {activeTab != 3 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
                     </div>
                 </button >
                 {renderActiveTab(3)}

@@ -1,19 +1,12 @@
 import React from "react";
 import "./Home.css"
+import Header from "../Header";
 
 const Home = () => {
     return(
         <div className="home-super-class">
-            <div className="header">
-                <div className="left-side">
-                    <tr className="qr-code-text">qrcode</tr>lemon
-                </div>
-                <div className="right-side">
-
-
-                </div>
-            </div>
-
+            
+            <Header></Header>
             <div className="main-content">
 
             </div>

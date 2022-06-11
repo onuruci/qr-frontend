@@ -1,25 +1,53 @@
 body{
     background-color: #20c997;
-    padding: 3% 20% 3% 20%;
     color: white;
     font-family: "Open Sans",Sans-Serif;
     font-size: 16px;
+    text-align: initial;
+    padding-top: 4%;
+    padding-bottom: 4%;
 }
 
 .header{
     display: flex;
+    margin: auto;
+    max-width: 1100px;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 
 .header .left-side{
-    font-size: 32px;
+    font-size: 37px;
+    display: flex;
+    flex-direction: row;
+    letter-spacing: 0.001in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.header .left-side .project-name{
     display: flex;
     flex-direction: row;
 }
 .header .left-side .qr-code-text{
     font-weight: bolder;
 }
+.header .left-side .lemon-text{
+    font-weight: lighter;
+}
+.information-text{
+    font-size: 15px;
+    font-weight: light;
+}
+
 
 .header .right-side{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
     
 }

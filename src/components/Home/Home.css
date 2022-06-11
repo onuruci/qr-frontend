@@ -37,9 +37,11 @@ body{
     flex-direction: row;
 }
 .header .left-side .qr-code-text{
+    font-size: 37px;
     font-weight: bolder;
 }
 .header .left-side .lemon-text{
+    font-size: 37px;
     font-weight: lighter;
 }
 .information-text{

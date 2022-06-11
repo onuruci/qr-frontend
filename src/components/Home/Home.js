@@ -3,6 +3,7 @@ import "./Home.css"
 import Header from "../Header";
 
 import MainGenerator from "../MainGenerator/MainGenerator";
+import Footer from "../Footer";
 
 const Home = () => {
 
@@ -13,9 +14,7 @@ const Home = () => {
             <div className="main-content">
                 <MainGenerator/>
             </div>
-            <div className="footer">
-                
-            </div>
+            <Footer/>
         </div>
     );
 };

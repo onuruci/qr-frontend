@@ -6,6 +6,8 @@ import selectLogo from "../images/earth-globe-with-continents-maps.png"
 import colorPalette from "../images/paint-board-and-brush.png"
 import addPhoto from "../images/photo.png"
 import customizeLogo from "../images/customize.png"
+import plusSign from "../images/plus.png";
+import minusSign from "../images/minus.png"
 
 const MainGenerator = () => {
 
@@ -13,6 +15,7 @@ const MainGenerator = () => {
     const [urlToDownload, setUrlToDownload] = useState("https://www.qrcode-monkey.com/");
     const [qrColor, setQRColor] = useState("#141926");
     const qrRef = React.useRef();
+    const [activeTab, setActiveTab] = useState(0);
 
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";
@@ -61,13 +64,37 @@ const MainGenerator = () => {
         }, 1000); 
     };
 
+    const renderActiveTab = (val) => {
+    
+        if(val == activeTab){
+            
+            if(val == 0){
+
+                return <div className="url-content">
+                    <div>
+                        Your Url
+                    </div>
+                    <input className="url-input" type="text" value={url} onChange={e => setUrl(e.target.value)} />
+                </div>  
+
+            }
+
+
+            else if(val == 1){
+
+            }
+
+        }
+
+    }
+
     return (
         <div className="main-generator">
             
 
 
             <div className="qr-editor">
-                <button className="selection-button">
+                <button id = "0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button">
                     <div className="select-logo">
                         <img className="logo-image" src={selectLogo} alt = "world-image"/>
                     </div>
@@ -75,11 +102,13 @@ const MainGenerator = () => {
                         ENTER CONTENT
                     </div>
                     <div className="extend-shrink">
-
+                        {activeTab != 0 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
                     </div>
-                </button >
+                </button>
+                
+                {renderActiveTab(0)}
 
-                <button className="selection-button">
+                <button id = "1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button">
                     <div className="select-logo">
                         <img className="logo-image" src={colorPalette} alt = "world-image"/>
                     </div>
@@ -87,10 +116,12 @@ const MainGenerator = () => {
                         SET COLORS
                     </div>
                     <div className="extend-shrink">
-
+                    {activeTab !=1 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
                     </div>
                 </button >
-                <button className="selection-button">
+
+                {renderActiveTab(1)}
+                <button id = "2" onClick={ () => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button">
                     <div className="select-logo">
                         <img className="logo-image" src={addPhoto} alt = "world-image"/>
                     </div>
@@ -98,10 +129,12 @@ const MainGenerator = () => {
                         ADD LOGO IMAGE
                     </div>
                     <div className="extend-shrink">
-
+                    {activeTab != 2 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
                     </div>
                 </button >
-                <button className="selection-button">
+
+                {renderActiveTab(2)}
+                <button id = "3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button">
                     <div className="select-logo">
                         <img className="logo-image" src={customizeLogo} alt = "world-image"/>
                     </div>
@@ -109,11 +142,10 @@ const MainGenerator = () => {
                         CUSTOMIZE DESIGN
                     </div>
                     <div className="extend-shrink">
-
+                    {activeTab != 3 ? <img className="plus-minus" src={plusSign} alt = "plus sign"></img> : <img className="plus-minus" src={minusSign} alt = "minus sign"></img>}
                     </div>
                 </button >
-
-                <input type="text" value={url} onChange={e => setUrl(e.target.value)} />
+                {renderActiveTab(3)}
 
             </div>
             <div className="qr-container">

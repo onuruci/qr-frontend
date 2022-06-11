@@ -53,6 +53,10 @@
     border: none;
     margin-bottom: 0.5rem;
 }
+
+.url-input::placeholder {
+    opacity: 0.35;
+}
 .select-logo{
     background-color: rgb(226, 219, 219);
     height: 3.5rem;

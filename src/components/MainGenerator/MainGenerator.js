@@ -59,9 +59,10 @@ const MainGenerator = () => {
     };
 
     const generateQRCode = () => {
-        setQRColor(lightColor);
+        let tempColor = foregroundColor
+        setForegroundColor(lightColor);
         setTimeout(() => {
-            setQRColor(normalColor);
+            setForegroundColor(tempColor);
             setUrlToDownload(url);
         }, 1000);
     };

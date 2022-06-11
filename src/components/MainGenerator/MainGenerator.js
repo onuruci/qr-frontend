@@ -11,8 +11,8 @@ import minusSign from "../images/minus.png"
 
 const MainGenerator = () => {
 
-    const [url, setUrl] = useState("https://www.qrcode-monkey.com/");
-    const [urlToDownload, setUrlToDownload] = useState("https://www.qrcode-monkey.com/");
+    const [url, setUrl] = useState("");
+    const [urlToDownload, setUrlToDownload] = useState("https://www.qrcode-lemon.com/");
     const [qrColor, setQRColor] = useState("#141926");
     const qrRef = React.useRef();
     const [activeTab, setActiveTab] = useState(0);
@@ -76,8 +76,9 @@ const MainGenerator = () => {
                     <div>
                         Your Url
                     </div>
-                    <input className="url-input" type="text" value={url} onChange={e => setUrl(e.target.value)} />
-                </div>
+
+                    <input className="url-input" type="text" placeHolder="https://www.qrcode-lemon.com/" value={url} onChange={e => setUrl(e.target.value)} />
+                </div>  
 
             }
 

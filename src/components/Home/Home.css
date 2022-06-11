@@ -15,6 +15,10 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
+.lemon-logo{
+    width: 4rem;
+    height: 4rem;
+}
 
 
 .header .left-side{
@@ -23,9 +27,10 @@ body{
     flex-direction: row;
     letter-spacing: 0.001in;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 .header .left-side .project-name{
     display: flex;

@@ -10,12 +10,12 @@ const Header = () => {
                 </div>
                 <div>
                     <div className="project-name">
-                        <div className="qr-code-text">qrcode</div> <div className="lemon-text">Lemon</div>
+                        <h1 className="qr-code-text">qrcode</h1> <h1 className="lemon-text">Lemon</h1>
                     </div>
 
-                    <div className="information-text">
+                    <h2 className="information-text">
                         The 100% Free QR Code Generator
-                    </div>
+                    </h2>
                 </div>
             </div>
             <div className="right-side">

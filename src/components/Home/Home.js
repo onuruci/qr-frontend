@@ -4,6 +4,7 @@ import Header from "../Header";
 
 import MainGenerator from "../MainGenerator/MainGenerator";
 import Footer from "../Footer";
+import Information from "../InformationContent"
 
 const Home = () => {
 
@@ -11,9 +12,8 @@ const Home = () => {
         <div className="home-super-class">
             
             <Header></Header>
-            <div className="main-content">
-                <MainGenerator/>
-            </div>
+            <MainGenerator/>
+            <Information/>
             <Footer/>
         </div>
     );

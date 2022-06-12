@@ -18,8 +18,9 @@ const MainGenerator = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [foregroundColor, setForegroundColor] = useState("#000000");
     const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
-    const [selectedImage, setSelectedImage] = useState();
-    
+    const [selectedImage, setSelectedImage] = useState("");
+    const [selectedDisplayImage, setSelectedDisplayImage] = useState("");
+
 
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";
@@ -33,7 +34,7 @@ const MainGenerator = () => {
             bgColor={backgroundColor}
             fgColor={foregroundColor}
             imageSettings={{
-                src: selectedImage,
+                src: selectedDisplayImage,
                 excavate: true,
                 width: 350 * 0.1,
                 height: 350 * 0.1,
@@ -52,7 +53,7 @@ const MainGenerator = () => {
             fgColor={foregroundColor}
             level="Q"
             imageSettings={{
-                src: selectedImage,
+                src: selectedDisplayImage,
                 excavate: true,
                 width: 1200 * 0.1,
                 height: 1200 * 0.1,
@@ -78,6 +79,7 @@ const MainGenerator = () => {
         setTimeout(() => {
             setForegroundColor(tempColor);
             setUrlToDownload(url);
+            setSelectedDisplayImage(selectedImage);
         }, 1000);
     };
 
@@ -140,7 +142,7 @@ const MainGenerator = () => {
                 return <div className="select-image-container">
 
                     <div className="selected-image-view">
-                        <img className="selected-image-src" src = {selectedImage ? selectedImage : null}></img>
+                        <img className="selected-image-src" src = {selectedImage ? selectedImage : null}></img> 
                     </div>
 
                     <div className="load-remove-container">

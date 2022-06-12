@@ -128,10 +128,21 @@
     width: 8rem;
     height: 8rem;
     background-color: white;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
 }
+
 .selected-image-src{
-    width: 8rem;
-    height: 8rem;
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 8rem;
+    max-width: 8rem;
+    margin: auto;
 }
 
 .load-image-button{

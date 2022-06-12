@@ -7,7 +7,7 @@ import numberFour from "../images/number-four.png"
 
 const Information = () => {
 
-    return <div className="information-container">
+    return <div className="information-container" id="about">
         <div style={{ fontWeight: "bold" }}>
             GET STARTED
         </div>

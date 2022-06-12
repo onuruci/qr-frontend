@@ -20,18 +20,15 @@ const Header = () => {
             </div>
             <div className="right-side">
 
-                <button className="element">
+                <a className="element" href="#about">
                     ABOUT
-                </button>
-                <button className="element">
-                    CHROME APP
-                </button>
-                <button className="element">
+                </a>
+                <a className="element" href="#api">
                     QRCODE API
-                </button>
-                <button className="element">
+                </a>
+                <a className="element" href="#">
                     ENGLISH
-                </button>
+                </a>
 
             </div>
         </div>

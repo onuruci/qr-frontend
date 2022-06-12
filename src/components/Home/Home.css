@@ -25,7 +25,9 @@ body{
     /*max-width: 1100px;*/
     flex-direction: row;
     justify-content: center;
-    gap: 20rem;
+    gap: 0rem;
+    width: 1100px;
+    max-width: 1100px;
 }
 .lemon-logo{
     width: 4rem;
@@ -43,6 +45,7 @@ body{
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
+    margin-right: auto;
 }
 .header .left-side .project-name{
     display: flex;
@@ -79,7 +82,10 @@ body{
 
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1200px) {
+    .header{
+        width: auto;
+    }
     .header .right-side {
       display: none;
     }
@@ -88,13 +94,15 @@ body{
         margin-right: auto;
     }
   }
-.header .right-side button{
+.header .right-side a{
     background-color: inherit;
     border: none;
     color: white;
     font-size: 14px;
     font-weight: bolder;
+    cursor: pointer;
+    text-decoration: none;
 }
-.header .right-side button:hover{
+.header .right-side a:hover{
     color: rgb(209, 203, 203);
 }

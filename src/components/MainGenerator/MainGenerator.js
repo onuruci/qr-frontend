@@ -21,6 +21,7 @@ const MainGenerator = () => {
     const [selectedImage, setSelectedImage] = useState("");
     const [selectedDisplayImage, setSelectedDisplayImage] = useState("");
 
+
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";
 

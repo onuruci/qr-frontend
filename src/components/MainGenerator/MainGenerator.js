@@ -104,7 +104,7 @@ const MainGenerator = () => {
                         Your Url
                     </div>
 
-                    <input className="url-input" type="text" placeholder="https://www.qrcode-lemon.com/" value={url} onChange={e => setUrl(e.target.value)} />
+                    <input className="url-input" type="text" placeHolder="https://www.qrcode-lemon.com/" value={url} onChange={e => setUrl(e.target.value)} />
                 </div>  
 
             }

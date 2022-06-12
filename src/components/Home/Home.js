@@ -6,6 +6,7 @@ import MainGenerator from "../MainGenerator/MainGenerator";
 import Footer from "../Footer";
 import Information from "../InformationContent"
 
+
 const Home = () => {
 
     return(

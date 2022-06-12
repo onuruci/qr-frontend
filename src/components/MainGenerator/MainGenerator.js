@@ -19,6 +19,7 @@ const MainGenerator = () => {
     const [foregroundColor, setForegroundColor] = useState("#000000");
     const [backgroundColor, setBackgroundColor] = useState("#FFFFFF");
     const [selectedImage, setSelectedImage] = useState();
+    
 
     const normalColor = "#141926";
     const lightColor = "#9fb2c0";

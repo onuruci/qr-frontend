@@ -7,13 +7,19 @@ body{
     padding-top: 4%;
     padding-bottom: 0%;
 }
+.home-super-class{
+    display: flex;
+    flex-direction: column;   
+    gap: 7rem;
+}
 
 .header{
     display: flex;
     margin: auto;
-    max-width: 1100px;
+    /*max-width: 1100px;*/
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10rem;
 }
 .lemon-logo{
     width: 4rem;

@@ -34,8 +34,8 @@ const MainGenerator = () => {
             imageSettings={{
                 src: selectedImage,
                 excavate: true,
-                width: 500 * 0.1,
-                height: 500 * 0.1,
+                width: 350 * 0.1,
+                height: 350 * 0.1,
               }}
             level="Q"
             includeMargin
@@ -53,8 +53,8 @@ const MainGenerator = () => {
             imageSettings={{
                 src: selectedImage,
                 excavate: true,
-                width: 400 * 0.1,
-                height: 400 * 0.1,
+                width: 1200 * 0.1,
+                height: 1200 * 0.1,
               }}
             includeMargin
         />
@@ -84,6 +84,13 @@ const MainGenerator = () => {
         const [file] = e.target.files;
         setSelectedImage(URL.createObjectURL(file));
     }
+
+    const removeImage = (e) => {
+
+        e.target.value = null;
+        setSelectedImage();
+    }
+
 
     const renderActiveTab = (val) => {
 
@@ -135,9 +142,10 @@ const MainGenerator = () => {
                         <img className="selected-image-src" src = {selectedImage ? selectedImage : null}></img>
                     </div>
 
-                    <div>
+                    <div className="load-remove-container">
                         <input className="select-image" id="select-image" type="file" name="logo-image" onChange={(e) => handleSelectedInput(e)} accept="image/*" />
                         <button className="load-image-button" id="loadLogo" onClick={() => document.getElementById('select-image').click()}>LOAD IMAGE</button>
+                        <button className="load-image-button remove-special" id = "removeImage" onClick={(e) => removeImage(e)}>REMOVE IMAGE</button>
                     </div>
                 </div>
             }

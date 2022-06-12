@@ -160,7 +160,7 @@ const MainGenerator = () => {
 
 
             <div className="qr-editor">
-                <button id="0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button">
+                <button id="0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button tab0">
                     <div className="select-logo">
                         <img className="logo-image" src={selectLogo} alt="world-image" />
                     </div>
@@ -174,7 +174,7 @@ const MainGenerator = () => {
 
                 {renderActiveTab(0)}
 
-                <button id="1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button">
+                <button id="1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button tab1">
                     <div className="select-logo">
                         <img className="logo-image" src={colorPalette} alt="world-image" />
                     </div>
@@ -187,7 +187,7 @@ const MainGenerator = () => {
                 </button >
 
                 {renderActiveTab(1)}
-                <button id="2" onClick={() => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button">
+                <button id="2" onClick={() => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button tab2">
                     <div className="select-logo">
                         <img className="logo-image" src={addPhoto} alt="world-image" />
                     </div>
@@ -200,7 +200,7 @@ const MainGenerator = () => {
                 </button >
 
                 {renderActiveTab(2)}
-                <button id="3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button">
+                <button id="3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button tab3">
                     <div className="select-logo">
                         <img className="logo-image" src={customizeLogo} alt="world-image" />
                     </div>

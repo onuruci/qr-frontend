@@ -9,6 +9,14 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 1200px) {
+    .information-container {
+        display: none;
+    }
+  }
+
+
 .step-section{
     display: flex;
     flex-direction: column;

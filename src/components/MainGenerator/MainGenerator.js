@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState} from "react";
 import QRCode from "qrcode.react";
 import './MainGenerator.css'
 import selectLogo from "../images/earth-globe-with-continents-maps.png"
@@ -10,6 +10,9 @@ import plusSign from "../images/plus.png";
 import minusSign from "../images/minus.png"
 import Wifi from "../WifiQrCode";
 import GeneralContent from "../GeneralContent";
+import ImageContent from "../CustomizeStyle/ImageChanges/ImageContent";
+import ColorContent from "../CustomizeStyle/ColorChanges/ColorContent";
+import ActiveTabContent from "../ActiveTabContent";
 
 const MainGenerator = () => {
 
@@ -22,10 +25,7 @@ const MainGenerator = () => {
     const [selectedImage, setSelectedImage] = useState("");
     const [selectedDisplayImage, setSelectedDisplayImage] = useState("");
     const [QRType, setQRType] = useState("URL")
-    const generateRef = useRef(null);
 
-
-    const normalColor = "#141926";
     const lightColor = "#9fb2c0";
 
     const qrCode = (
@@ -118,43 +118,12 @@ const MainGenerator = () => {
 
             else if (val == 1) {
                 return <div className="color-content">
-                    <div className="color-div">
-                        <div>
-                            Foreground Color
-                        </div>
-                        <div className="color-change">
-                            <input className="foreground-color-input" type="color" value={foregroundColor} onChange={e => setForegroundColor(e.target.value)} />
-                            <div className="color-text">
-                                {foregroundColor}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="color-div">
-                        <div>
-                            Background Color
-                        </div>
-                        <div className="color-change">
-                            <input className="background-color-input" type="color" value={backgroundColor} onChange={e => setBackgroundColor(e.target.value)} />
-                            <div className="color-text">
-                                {backgroundColor}
-                            </div>
-                        </div>
-                    </div>
+                    <ColorContent type = "fore" c = {foregroundColor} sc = {setForegroundColor}></ColorContent>
+                    <ColorContent type = "back" c = {backgroundColor} sc = {setBackgroundColor}></ColorContent>
                 </div>
             }
             else if (val == 2) {
-                return <div className="select-image-container">
-
-                    <div className="selected-image-view">
-                        <img className="selected-image-src" src={selectedImage ? selectedImage : null}></img>
-                    </div>
-
-                    <div className="load-remove-container">
-                        <input className="select-image" id="select-image" type="file" name="logo-image" onChange={(e) => handleSelectedInput(e)} accept="image/*" />
-                        <button className="load-image-button" id="loadLogo" onClick={() => document.getElementById('select-image').click()}>LOAD IMAGE</button>
-                        <button className="load-image-button remove-special" id="removeImage" onClick={(e) => removeImage(e)}>REMOVE IMAGE</button>
-                    </div>
-                </div>
+                return <ImageContent selectedImage={selectedImage} removeImage = {removeImage} handleSelectedInput = {handleSelectedInput} ></ImageContent>
             }
 
         }
@@ -165,72 +134,28 @@ const MainGenerator = () => {
 
         <div className="main-wrapper">
             <div className="select-qr-type">
-                <button className={QRType == "URL" ? "selected-qr-type" : ""} onClick={(e) => setQRType("URL")}>
-                    URL
-                </button>
-                <button className={QRType == "WIFI" ? "selected-qr-type" : ""} onClick={(e) => setQRType("WIFI")}>
+                <button className={QRType === "WIFI" ? "selected-qr-type" : ""} onClick={(e) => setQRType("WIFI")}>
                     WIFI
                 </button>
-                <button className={QRType == "LOCATION" ? "selected-qr-type" : ""} onClick={(e) => setQRType("LOCATION")}>
+                <button className={QRType === "LOCATION" ? "selected-qr-type" : ""} onClick={(e) => setQRType("LOCATION")}>
                     LOCATION
                 </button>
-                <button className={QRType == "APP STORE" ? "selected-qr-type" : ""} onClick={(e) => setQRType("APP STORE")}>
+                <button className={QRType === "APP STORE" ? "selected-qr-type" : ""} onClick={(e) => setQRType("APP STORE")}>
                     APP STORE
                 </button>
             </div>
             <div className="main-generator">
                 <div className="qr-editor">
-                    <button id="0" onClick={() => activeTab == 0 ? setActiveTab(-1) : setActiveTab(0)} className="selection-button tab0">
-                        <div className="select-logo">
-                            <img className="logo-image" src={selectLogo} alt="world-image" />
-                        </div>
-                        <div className="select-text">
-                            ENTER CONTENT
-                        </div>
-                        <div className="extend-shrink">
-                            {activeTab != 0 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
-                        </div>
-                    </button>
-
+                    <ActiveTabContent id = "0" activeTab = {activeTab} plusSign = {plusSign} minusSign = {minusSign} selectLogo = {selectLogo} setActiveTab = {setActiveTab}></ActiveTabContent>
                     {renderActiveTab(0)}
 
-                    <button id="1" onClick={() => activeTab == 1 ? setActiveTab(-1) : setActiveTab(1)} className="selection-button tab1">
-                        <div className="select-logo">
-                            <img className="logo-image" src={colorPalette} alt="world-image" />
-                        </div>
-                        <div className="select-text">
-                            SET COLORS
-                        </div>
-                        <div className="extend-shrink">
-                            {activeTab != 1 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
-                        </div>
-                    </button >
+                    <ActiveTabContent id = "1" activeTab = {activeTab} plusSign = {plusSign} minusSign = {minusSign} selectLogo = {selectLogo} setActiveTab = {setActiveTab}></ActiveTabContent>
 
                     {renderActiveTab(1)}
-                    <button id="2" onClick={() => activeTab == 2 ? setActiveTab(-1) : setActiveTab(2)} className="selection-button tab2">
-                        <div className="select-logo">
-                            <img className="logo-image" src={addPhoto} alt="world-image" />
-                        </div>
-                        <div className="select-text">
-                            ADD LOGO IMAGE
-                        </div>
-                        <div className="extend-shrink">
-                            {activeTab != 2 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
-                        </div>
-                    </button >
+                    <ActiveTabContent id = "2" activeTab = {activeTab} plusSign = {plusSign} minusSign = {minusSign} selectLogo = {selectLogo} setActiveTab = {setActiveTab}></ActiveTabContent>
 
                     {renderActiveTab(2)}
-                    <button id="3" onClick={() => activeTab == 3 ? setActiveTab(-1) : setActiveTab(3)} className="selection-button tab3">
-                        <div className="select-logo">
-                            <img className="logo-image" src={customizeLogo} alt="world-image" />
-                        </div>
-                        <div className="select-text">
-                            CUSTOMIZE DESIGN
-                        </div>
-                        <div className="extend-shrink">
-                            {activeTab != 3 ? <img className="plus-minus" src={plusSign} alt="plus sign"></img> : <img className="plus-minus" src={minusSign} alt="minus sign"></img>}
-                        </div>
-                    </button >
+                    <ActiveTabContent id = "3" activeTab = {activeTab} plusSign = {plusSign} minusSign = {minusSign} selectLogo = {selectLogo} setActiveTab = {setActiveTab}></ActiveTabContent>
                     {renderActiveTab(3)}
 
                 </div>
@@ -242,7 +167,7 @@ const MainGenerator = () => {
                         {qrToDownload}
                     </div>
                     <div className="qr-button-container">
-                        <button className="qr-button bg-green" ref={generateRef} onClick={() => generateQRCode()}>Generate QR</button>
+                        <button className="qr-button bg-green"  onClick={() => generateQRCode()}>Generate QR</button>
                         <button className="qr-button bg-blue" onClick={() => downloadQRCode()}>Download QR</button>
                     </div>
                 </div>
@@ -250,5 +175,4 @@ const MainGenerator = () => {
         </div>
     );
 };
-
 export default MainGenerator;

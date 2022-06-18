@@ -1,4 +1,8 @@
 
+body{
+    overflow-x: hidden;
+}
+
 .main-generator {
     margin: 0 auto 7rem auto;
     max-width: 1200px;

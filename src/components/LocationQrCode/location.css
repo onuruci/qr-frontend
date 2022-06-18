@@ -1,0 +1,32 @@
+.loc-flex-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.loc-label {
+    font-size: 80%;
+    color: rgb(111, 120, 127);
+    font-weight: 700;
+}
+
+.loc-label-input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.loc-input {
+    border: none;
+    background-color: white;
+    height: 2rem;
+}
+
+.loc-wide {
+    width: 100%;
+}
+
+.loc-narrow {
+    width: 50%;
+}

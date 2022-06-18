@@ -1,0 +1,21 @@
+.label-input-pair{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.form-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.form-wrapper > div > label{
+    font-size: 80%;
+    color: rgb(111, 120, 127);
+    font-weight: 700;
+}
+.form-wrapper > div > input, .form-wrapper > div > select{
+    width: 12rem;
+    border: none;
+    background-color: white;
+    height: 2rem;
+}

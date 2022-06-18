@@ -9,6 +9,7 @@ import customizeLogo from "../images/customize.png"
 import plusSign from "../images/plus.png";
 import minusSign from "../images/minus.png"
 import Wifi from "../WifiQrCode";
+import Location from "../LocationQrCode";
 import GeneralContent from "../GeneralContent";
 
 const MainGenerator = () => {
@@ -111,6 +112,9 @@ const MainGenerator = () => {
                 }
                 else if(QRType == "WIFI"){
                     return <Wifi  setUrl={setUrl} ></Wifi>
+                }
+                else if(QRType == "LOCATION"){
+                    return <Location setUrl={setUrl}/>
                 }
 
             }

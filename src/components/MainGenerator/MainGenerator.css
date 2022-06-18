@@ -226,10 +226,9 @@ body{
 
 .qr-container {
     margin-left: auto;
-    height: 600px;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 }
 
 .qr {
@@ -276,7 +275,10 @@ body{
         align-items: center;
         background-color: #e8ebec;
         gap: 3rem;
+        
+        
     }
+
     .select-qr-type{
         width: 25rem;
     }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ActiveTabContent = ({id, plusSign, activeTab, setActiveTab, selectLogo, minusSign}) => {
+const ActiveTabContent = ({ id, plusSign, activeTab, setActiveTab, selectLogo, minusSign }) => {
     return <button id={id} onClick={() => activeTab == id ? setActiveTab(-1) : setActiveTab(id)} className="selection-button">
         <div className="select-logo">
             <img className="logo-image" src={selectLogo} alt="" />

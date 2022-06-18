@@ -151,7 +151,7 @@ body{
 }
 
 .select-text{
-   width: 33.5rem;
+   width: 82%;
    text-align: left;
 }
 
@@ -262,7 +262,14 @@ body{
 
 @media screen and (max-width: 1200px) {
     .main-generator {
-      flex-direction: column;
+        padding-top: 3rem;
+        flex-direction: column;
+        align-items: center;
+        background-color: #e8ebec;
+        gap: 3rem;
+    }
+    .select-qr-type{
+        width: 25rem;
     }
     .qr-container {
         margin-left: auto;
@@ -277,15 +284,10 @@ body{
     .tab3 {
         display: none;
     }
-    body {
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
     .qr-editor {
-        margin-left: auto;
-        margin-right: auto;
         width: 90%;
         padding: 0.5rem;
+       
     }
     .selection-button {
         width: 100%;
@@ -293,6 +295,7 @@ body{
   }
 
   @media screen and (max-width: 800px) {
+    
     .qr-editor {
         margin-left: auto;
         margin-right: auto;

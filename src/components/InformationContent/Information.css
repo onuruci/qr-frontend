@@ -63,8 +63,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .second-main-text{
-        
+    .second-main-text{       
         align-items: center;
         flex-direction: column;
         font-size: 16px;

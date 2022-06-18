@@ -9,6 +9,7 @@ import customizeLogo from "../images/customize.png"
 import plusSign from "../images/plus.png";
 import minusSign from "../images/minus.png"
 import Wifi from "../WifiQrCode";
+import GeneralContent from "../GeneralContent";
 
 const MainGenerator = () => {
 
@@ -21,9 +22,6 @@ const MainGenerator = () => {
     const [selectedImage, setSelectedImage] = useState("");
     const [selectedDisplayImage, setSelectedDisplayImage] = useState("");
     const [QRType, setQRType] = useState("URL")
-    const [authentication, setAuthentication] = useState("WPA/WPA2");   
-    const [name, setName] = useState("");   
-    const [password, setPassword] = useState("");
     const generateRef = useRef(null);
 
 
@@ -80,12 +78,6 @@ const MainGenerator = () => {
 
     const generateQRCode = () => {
 
-
-        if(QRType == "WIFI"){
-            setUrl(`WIFI:T:${authentication};S:${name};${authentication !== 'no encyription' ? `P:${password};` : ''}H:${false};`);
-        }
-        console.log(url);
-
         let tempColor = foregroundColor
         setForegroundColor(lightColor);
         setTimeout(() => {
@@ -114,16 +106,11 @@ const MainGenerator = () => {
             if (val == 0) {
 
                 if(QRType == "URL"){
-                    return <div className="url-content">
-                    <div>
-                        Your Url
-                    </div>
 
-                    <input className="url-input" type="text" placeHolder="https://www.qrcode-lemon.com/" value={url} onChange={e => setUrl(e.target.value)} />
-                    </div>
+                    return <GeneralContent setUrl = {setUrl}></GeneralContent>
                 }
                 else if(QRType == "WIFI"){
-                    return <Wifi  setAuthentication = {setAuthentication}  setName = {setName}  setPassword = {setPassword} ></Wifi>
+                    return <Wifi  setUrl={setUrl} ></Wifi>
                 }
 
             }

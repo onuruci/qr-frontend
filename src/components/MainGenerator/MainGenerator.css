@@ -12,8 +12,13 @@ body{
     background-color: rgb(255,255,255);
     border-radius: 0.5rem;
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: row;  
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 .main-wrapper{
     display: flex;

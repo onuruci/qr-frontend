@@ -9,17 +9,17 @@ import Information from "../InformationContent"
 
 const Home = () => {
 
-    return(
-        <div>
+    return (
+        <div className="root-container">
             <div className="home-super-class">
-            
-            <Header></Header>
-            <MainGenerator/>
-        </div>
-        <div className="informational-section-container">
-            <Information/>
-            <Footer/>
-        </div>
+
+                <Header></Header>
+                <MainGenerator />
+            </div>
+            <div className="informational-section-container">
+                <Information />
+                <Footer />
+            </div>
         </div>
     );
 };

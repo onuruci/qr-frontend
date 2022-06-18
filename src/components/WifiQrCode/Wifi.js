@@ -31,15 +31,15 @@ const Wifi = ({ setUrl }) => {
         
         <div className="label-input-pair">
             <label htmlFor="ssid name">Wireless SSID</label>
-            <input id = "name" required={true} type="text" onChange={(e) => handleChange(e)}></input>
+            <input className="wifi-input" id = "name" required={true} type="text" onChange={(e) => handleChange(e)}></input>
         </div>
         <div className="label-input-pair">
             <label htmlFor="password">Password</label>
-            <input id = "password" required={true} type="password"  onChange={(e) => handleChange(e)}></input>
+            <input className="wifi-input" id = "password" required={true} type="password"  onChange={(e) => handleChange(e)}></input>
         </div>
         <div className="label-input-pair">
             <label htmlFor="authentication">Encyription</label>
-            <select id = "auth" required={true} name="authentication" onChange={(e) => handleChange(e)}>
+            <select className="wifi-input" id = "auth" required={true} name="authentication" onChange={(e) => handleChange(e)}>
                 <option value="WPA">
                     WPA/WPA2
                 </option>

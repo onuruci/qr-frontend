@@ -13,9 +13,20 @@
     color: rgb(111, 120, 127);
     font-weight: 700;
 }
-.form-wrapper > div > input, .form-wrapper > div > select{
+.wifi-input{
     width: 12rem;
     border: none;
     background-color: white;
     height: 2rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .form-wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .wifi-input{
+        width: 100%;
+    }
 }

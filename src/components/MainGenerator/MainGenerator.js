@@ -134,6 +134,9 @@ const MainGenerator = () => {
 
         <div className="main-wrapper">
             <div className="select-qr-type">
+            <button className={QRType === "URL" ? "selected-qr-type" : ""} onClick={(e) => setQRType("URL")}>
+                    URL
+                </button>
                 <button className={QRType === "WIFI" ? "selected-qr-type" : ""} onClick={(e) => setQRType("WIFI")}>
                     WIFI
                 </button>

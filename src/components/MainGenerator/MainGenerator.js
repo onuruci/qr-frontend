@@ -14,6 +14,7 @@ import GeneralContent from "../GeneralContent";
 import ImageContent from "../CustomizeStyle/ImageChanges/ImageContent";
 import ColorContent from "../CustomizeStyle/ColorChanges/ColorContent";
 import ActiveTabContent from "../ActiveTabContent";
+import AppStore from "../AppStore";
 
 const MainGenerator = () => {
 
@@ -115,6 +116,9 @@ const MainGenerator = () => {
                 }
                 else if(QRType == "LOCATION"){
                     return <Location setUrl={setUrl}/>
+                }
+                else if(QRType == "APP STORE"){
+                    return <AppStore setUrl={setUrl}></AppStore>
                 }
 
             }

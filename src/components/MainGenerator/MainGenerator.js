@@ -16,6 +16,9 @@ import ColorContent from "../CustomizeStyle/ColorChanges/ColorContent";
 import ActiveTabContent from "../ActiveTabContent";
 import AppStore from "../AppStore";
 
+const axios = require('axios');
+const baseAPI = 'https://qr-api-lemon.herokuapp.com/';
+
 const MainGenerator = () => {
 
     const [url, setUrl] = useState("");
@@ -78,10 +81,20 @@ const MainGenerator = () => {
         document.body.removeChild(anchor);
     };
 
-    const generateQRCode = () => {
+    const generateQRCode = async () => {
 
         let tempColor = foregroundColor
         setForegroundColor(lightColor);
+
+        let apiUrl = baseAPI+'new_generate/'
+
+
+        axios.post(apiUrl, {url: url !== '' ? url : 'https://www.qrcode-lemon.com/'}).then((res) => {
+            //console.log(res);
+        }).catch(err => {
+            console.log("err");
+            console.log(err);
+        });
         setTimeout(() => {
             setForegroundColor(tempColor);
             setUrlToDownload(url);
